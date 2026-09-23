@@ -1,0 +1,27 @@
+flowchart LR
+    subgraph Cliente
+        UI[Angular App]
+    end
+
+    subgraph Servidor[".NET 8 API"]
+        API["BSC.Api<br/>REST + JWT + Swagger"]
+        BIZ["BSC.Business<br/>Services + Rules"]
+        DATA["BSC.Data<br/>Dapper Repos"]
+    end
+
+    subgraph Persistencia["SQL Server 2022"]
+        DB[(Base de datos BSC)]
+        SP[Stored Procedures]
+        V[Views]
+        T[Triggers]
+        IX[Indexes]
+    end
+
+    UI -->|HTTP + JWT| API
+    API --> BIZ
+    BIZ --> DATA
+    DATA -->|ADO.NET + Dapper| SP
+    SP --> DB
+    V --> DB
+    T --> DB
+    IX --> DB
