@@ -1,0 +1,83 @@
+# .NET / Visual Studio
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.userprefs
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+*.[Pp]ublish.ps1
+.vs/
+TestResults/
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.VisualState.xml
+TestResult.xml
+*.cachefile
+*.coverage
+*.coveragexml
+appsettings.*.local.json
+
+# .NET CLI tools
+.dotnet/
+.atext/
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# IDEs
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+._*
+
+# Secrets / env
+.env
+.env.local
+.env.*.local
+*.pem
+secrets/
+
+# Build artifacts
+publish/
+artifacts/
+*.zip
+*.tar.gz
+
+# SQL Server (no local files — runs in Docker)
+/data/
+*.mdf
+*.ldf
+*.bak
+
+# Logs
+logs/
+*.log

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+# C# source
+*.cs     linguist-language=C#
+
+# SQL files
+*.sql    linguist-language=SQL
