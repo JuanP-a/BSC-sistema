@@ -1,0 +1,15 @@
+USE master;
+GO
+
+IF DB_ID('BSC') IS NULL
+BEGIN
+    CREATE DATABASE BSC
+    COLLATE SQL_Latin1_General_CP1_CI_AS;
+END;
+GO
+
+USE BSC;
+GO
+
+PRINT 'BSC database ready.';
+GO
