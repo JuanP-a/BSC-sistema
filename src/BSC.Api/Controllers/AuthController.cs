@@ -1,0 +1,29 @@
+using BSC.Business.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace BSC.Api.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class AuthController : ControllerBase
+{
+    private readonly AuthService _auth;
+
+    public AuthController(AuthService auth)
+    {
+        _auth = auth;
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.NombreUsuario) || string.IsNullOrWhiteSpace(request.Contrasena))
+            return BadRequest(new { error = "Nombre de usuario y contrasena son requeridos." });
+
+        var result = await _auth.LoginAsync(request);
+        if (!result.IsSuccess)
+            return Unauthorized(new { error = result.Error, code = result.ErrorCode });
+
+        return Ok(result.Value);
+    }
+}
